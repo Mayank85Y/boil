@@ -1,0 +1,26 @@
+{
+  "name": "boil",
+  "version": "1.0.0",
+  "packageManager": "bun@1.2.13",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "format:check": "turbo run format:check",
+    "format:fix": "turbo run format:fix",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean && rimraf node_modules"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "turbo": "^2.5.6",
+    "typescript": "^5.9.2"
+  }
+}
