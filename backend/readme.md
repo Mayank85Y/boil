@@ -6,3 +6,5 @@ koanf: config mangment (or viper)
 turn : database migration (or goose, golang migrator)
 testify: test
 test container: test
+asyncq: background jobs
+resend: 

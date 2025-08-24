@@ -17,6 +17,7 @@ type Config struct{
 	Database		DatabaseConfig			`koanf:"database" validate:"required"`
 	Auth			AuthConfig				`koanf:"auth" validate:"required"`
 	Redis			RedisConfig				`koanf:"redis" validate:"required"`
+	Integration 	IntegrationConfig		`koanf:"integration" validate:"required"`
 	Observability	*ObservabilityConfig 	`koanf:"observability"`
 }
 
@@ -52,6 +53,11 @@ type AuthConfig struct {
 type RedisConfig struct {
 	Address	string	`koanf:"address" validate:"required"`
 }
+
+type IntegrationConfig struct{
+	ResendAPIKey string `koanf:"resend_api_key" validate:"required"`
+}
+
 func LoadConfig() (*Config, error){
 	logger := zerolog.New(zerolog.ConsoleWriter{Out: os.Stderr}).With().Timestamp().Logger()
 
