@@ -139,7 +139,7 @@ func NewLoggerWithService(cfg *config.ObservabilityConfig, loggerService *Logger
 }
 
 //transaction behave like a trace in newrelic
-func withTraceContext(logger zerolog.Logger, txn *newrelic.Transaction) zerolog.Logger{
+func WithTraceContext(logger zerolog.Logger, txn *newrelic.Transaction) zerolog.Logger{
 	if txn == nil {
 		return logger
 	}
