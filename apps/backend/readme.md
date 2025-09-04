@@ -8,3 +8,4 @@ testify: test
 test container: test
 asyncq: background jobs
 resend: 
+scalar: (swagger)

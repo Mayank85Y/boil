@@ -20,7 +20,7 @@ type LoggerService struct {
 
 func NewLoggerService(cfg *config.ObservabilityConfig) *LoggerService{
 	service := &LoggerService{}
-	if cfg.NewRelic.Licensekey == "" {
+	if cfg.NewRelic.LicenseKey == "" {
 		fmt.Println("New Relic licese key not provided, skipping initialization")
 		return service
 	}
@@ -28,7 +28,7 @@ func NewLoggerService(cfg *config.ObservabilityConfig) *LoggerService{
 	var configOptions []newrelic.ConfigOption
 	configOptions = append(configOptions,
 		newrelic.ConfigAppName(cfg.ServiceName),
-		newrelic.ConfigLicense(cfg.NewRelic.Licensekey),
+		newrelic.ConfigLicense(cfg.NewRelic.LicenseKey),
 		newrelic.ConfigAppLogForwardingEnabled(cfg.NewRelic.AppLogForwardingEnabled),
 		newrelic.ConfigDistributedTracerEnabled(cfg.NewRelic.DistributedTracingEnabled),
 	)

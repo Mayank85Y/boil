@@ -24,7 +24,7 @@ func NewContextEnhancer(s *server.Server) *ContextEnhancer{
 	return &ContextEnhancer{server: s}
 }
 
-func (ce *ContextEnhancer) Enhacer() echo.MiddlewareFunc{
+func (ce *ContextEnhancer) EnhanceContext() echo.MiddlewareFunc{
 	return func(next echo.HandlerFunc) echo.HandlerFunc{
 		return func(c echo.Context) error {
 			//extract request id
